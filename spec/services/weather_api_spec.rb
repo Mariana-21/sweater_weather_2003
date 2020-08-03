@@ -10,5 +10,12 @@ RSpec.describe "Weather API Service" do
     body = service.location_weather(lat, lon)
 
     expect(body[:timezone]).to eq("America/Denver")
+    expect(body[:current][:sunrise]).to be_a(Integer) 
+    expect(body[:current][:sunset]).to be_a(Integer) 
+    expect(body[:current][:temp]).to be_a(Float) 
+    expect(body[:current][:feels_like]).to be_a(Float) 
+    expect(body[:current][:humidity]).to be_a(Integer) 
+    expect(body[:current][:visibility]).to be_a(Integer) 
+    expect(body[:current][:uvi]).to be_a(Float) 
   end
 end
