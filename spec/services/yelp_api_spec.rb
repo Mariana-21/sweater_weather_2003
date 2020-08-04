@@ -12,8 +12,8 @@ RSpec.describe "Weather API Service" do
 
     # binding.pry
     expect(body[:businesses]).to be_an(Array)
-    expect(body[:businesses][0][:location][:display_address]).to eq(["500 16th St", "Denver, CO 80202"])
-    expect(body[:businesses][0][:name]).to eq("Liang's Thai Food")
+    expect(body[:businesses][0][:location][:display_address]).to eq(["110 16th St", "Ste 110", "Denver, CO 80202"])
+    expect(body[:businesses][0][:name]).to eq("Naked Bowl")
     expect(body.keys).to eq([:businesses, :total, :region])
   end
 end
