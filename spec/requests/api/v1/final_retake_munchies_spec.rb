@@ -18,6 +18,6 @@ RSpec.describe "Munchies api endpoint" do
 
     expect(json).to eq(expected)
     expect(json[:keys]).to eq([:null, :start_location, :end_location, :destination_forecast, :restaurant])  
-    binding.pry
+    # binding.pry
   end
 end

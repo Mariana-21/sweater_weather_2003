@@ -30,8 +30,8 @@ class MunchieResults
         start_location: start_location(start_lat, start_long)[:results][0][:locations][0][:adminArea5],
         end_location: end_location(lat, long)[:results][0][:locations][0][:adminArea5],
         destination_forecast: {
-          current: end_location_forecast(lat, long).forecast_info[:current][:weather][0][:main],
-          arrival: end_location_forecast(lat, long).forecast_info[:hourly][0][:weather][0][:main]
+          current: "Looks like #{end_location_forecast(lat, long).forecast_info[:current][:weather][0][:main]} skies for now!",
+          arrival: "The skies are going to be #{end_location_forecast(lat, long).forecast_info[:hourly][0][:weather][0][:main]}!"
         },
         restaurant: {
           name: rest_data(lat, long, food_type)[:businesses][0][:name],
