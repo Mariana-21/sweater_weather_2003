@@ -13,7 +13,7 @@ RSpec.describe "Munchies api endpoint" do
       :start_location=>"Denver",
       :end_location=>"Pueblo",
       :destination_forecast=>{:current=>"Clear", :arrival=>"Clear"},
-      :restaurant=>{:name=>"Kan's Kitchen", :address=>"1620 S Prairie Ave"}
+      :restaurant=>{:name=>"Kan's Kitchen", :address=>["1620 S Prairie Ave", "Pueblo, CO 81005"]}
     }
 
     expect(json).to eq(expected)
