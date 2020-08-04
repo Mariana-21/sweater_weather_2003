@@ -35,7 +35,7 @@ class MunchieResults
         },
         restaurant: {
           name: rest_data(lat, long, food_type)[:businesses][0][:name],
-          address: rest_data(lat, long, food_type)[:businesses][0][:location][:display_address]
+          address: rest_data(lat, long, food_type)[:businesses][0][:location][:display_address].join("")
         }
       }
   end
