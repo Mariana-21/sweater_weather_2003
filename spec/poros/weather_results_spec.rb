@@ -1,13 +1,13 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-RSpec.describe WeatherResults do
-  describe 'class methods' do
-    location = "Denver,CO"
+# RSpec.xdescribe WeatherResults do
+#   xdescribe 'class methods' do
+#     location = "Denver,CO"
 
-    location_results = LocationResults.new.get_lat_long_by_city(location)
-    lat = location_results.first
-    long = location_results.last
-    results = WeatherResults.new.weather_by_location(location)
-    binding.pry
-  end
-end
+#     location_results = LocationResults.new.get_lat_long_by_city(location)
+#     lat = location_results.first
+#     long = location_results.last
+#     results = WeatherResults.new.weather_by_location(location)
+#     # binding.pry
+#   end
+# end
