@@ -6,7 +6,7 @@ RSpec.describe "Weather API" do
 
     # binding.pry
     body = JSON.parse(response.body, symbolize_names: true)
-    binding.pry
+    # binding.pry
     # expect(body.keys).to eq([:forecast, :hourly, :daily])    
   end 
 end
