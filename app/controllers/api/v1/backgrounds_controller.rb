@@ -7,6 +7,6 @@ class Api::V1::BackgroundsController < ApplicationController
 
     def get_background_image
       location = params[:location]
-      (UnsplashService.new).get_image(location)
+      UnsplashService.new.get_image(location)
     end
 end
