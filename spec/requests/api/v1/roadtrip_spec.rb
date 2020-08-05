@@ -51,7 +51,7 @@ RSpec.describe "Road Trip Request" do
     expect(parsed_road_trip_response[:data][:attributes][:travel_time]).to_not eq(nil)
     expect(parsed_road_trip_response[:data][:attributes][:arrival_forecast]).to_not eq(nil)
     expect(parsed_road_trip_response[:data][:attributes][:travel_time]).to_not eq(nil)
-    # binding.pry
+
     expect(parsed_road_trip_response[:data][:type]).to eq("road_trip")
     expect(parsed_road_trip_response[:data][:id]).to eq("null")
     expect(parsed_road_trip_response[:data][:attributes][:origin]).to eq(road_trip_params[:origin])
@@ -59,7 +59,7 @@ RSpec.describe "Road Trip Request" do
     expect(parsed_road_trip_response[:data][:attributes][:travel_time]).to eq("01 hour(s) and 43 minuets")
   end
 
-   it "Invalid API Key", :vcr do
+   it "Invalid API Key" do
     road_trip_params = {
       "origin": "Denver,CO",
       "destination": "Pueblo,CO",
@@ -75,7 +75,7 @@ RSpec.describe "Road Trip Request" do
     expect(response.status).to eq(401)
   end
 
-  it "No API Key", :vcr do
+  it "No API Key" do
     road_trip_params = {
       "origin": "Denver,CO",
       "destination": "Pueblo,CO"
