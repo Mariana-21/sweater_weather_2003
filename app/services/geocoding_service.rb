@@ -6,16 +6,19 @@ class GeocodingService
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  def get_city_by_lat_long(lat, long)
-    # binding.pry
-    response = conn.get("/geocoding/v1/reverse") do |r|
-      r.params[:location] = [lat, long].join(",")
+  def get_trip_info(start_location, end_location)
+    response = conn.get("/directions/v2/route") do |r|
+      r.params[:from] = start_location
+      r.params[:to] = end_location
     end
+    JSON.parse(response.body, symbolize_names: true)
   end
 
-  def get_location_objects(location)
-    location_info = location_lat_long(location)
-    Geocode.new(location_info)
+  def get_trip_duration(start_location, end_location)
+    response = get_trip_info(start_location, end_location)
+    {
+      time: response[:route][:time]
+    }
   end
   
   private

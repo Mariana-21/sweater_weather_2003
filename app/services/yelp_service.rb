@@ -12,10 +12,10 @@ class YelpService
     json = JSON.parse(response.body, symbolize_names: true)
   end
 
-  def rest_object(lat, lon, food_type)
-    rest_data = get_restaurants_by_end_location(lat,lon, food_type)
-    MunchieResults.new(rest_data)
-  end
+  # def rest_object(lat, lon, food_type)
+  #   rest_data = get_restaurants_by_end_location(lat,lon, food_type)
+  #   MunchieResults.new(rest_data)
+  # end
 
   private
     def conn
