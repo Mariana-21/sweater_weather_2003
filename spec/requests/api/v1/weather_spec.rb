@@ -8,10 +8,7 @@ RSpec.describe "Forecast Request" do
       expect(response).to be_successful
 
       forecast_response = JSON.parse(response.body, symbolize_names: true)
-
-      # expect(forecast_response[:data][:attributes][:location_info][:city]).to_not eq(nil)
-      # expect(forecast_response[:data][:attributes][:location_info][:state]).to_not eq(nil)
-      # expect(forecast_response[:data][:attributes][:location_info][:country]).to_not eq(nil)
+ 
       expect(forecast_response[:data][:attributes][:current_time_month_day]).to_not eq(nil)
       expect(forecast_response[:data][:attributes][:weather_description]).to_not eq(nil)
       expect(forecast_response[:data][:attributes][:actual_temp]).to_not eq(nil)
