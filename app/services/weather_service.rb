@@ -7,7 +7,7 @@ class WeatherService
       r.params[:units] = "imperial"
       r.params[:exclude] = "minutely"
     end 
-  json = JSON.parse(response.body, symbolize_names: true)
+  # json = JSON.parse(response.body, symbolize_names: true)
   end
 
   def weather_objects(lat, lon)
